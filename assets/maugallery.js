@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		lightboxId: "myAwesomeLightbox",
 		showTags: true,
 		tagsPosition: "top",
+		navigation: true, // Ensure navigation is enabled
 	});
 
 	function mauGallery(element, options) {
@@ -174,7 +175,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			.getElementById(lightboxId)
 			.querySelector(".lightboxImage")
 			.setAttribute("src", element.getAttribute("src"));
-		$("#" + lightboxId).modal("toggle");
+		// Show the modal
+		const modal = new bootstrap.Modal(document.getElementById(lightboxId));
+		modal.show();
 	}
 
 	function prevImage(lightboxId) {
