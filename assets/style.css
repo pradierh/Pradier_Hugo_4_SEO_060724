@@ -1,4 +1,13 @@
 /* Modal Styles */
+body {
+	max-width: 1920px;
+	margin: auto;
+}
+* {
+	font-family: "Inter";
+	font-style: normal;
+}
+
 .modal {
 	display: none;
 	position: fixed;
@@ -194,6 +203,10 @@ body {
 	text-align: center;
 	padding-block: 2em;
 }
+.gallery {
+	display: flex;
+	justify-content: center;
+}
 .gallery .nav {
 	justify-content: center;
 }
@@ -213,10 +226,18 @@ body {
 	padding-bottom: 100%;
 }
 
-.gallery {
+#gallery {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.gallery__img {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 1400px;
 }
 
 .gallery-item {
@@ -307,6 +328,27 @@ input[type="submit"] {
 	background-color: #beb45a;
 	padding: 0.5em 1em;
 }
+
+@media all and (max-width: 1400px) {
+	.gallery-item {
+		height: 380px;
+		width: 380px;
+	}
+	.gallery__img {
+		max-width: 1150px;
+	}
+}
+
+@media all and (max-width: 1200px) {
+	.gallery-item {
+		height: 319px;
+		width: 319px;
+	}
+	.gallery__img {
+		max-width: 1000px;
+	}
+}
+
 @media all and (max-width: 1180px) {
 	.picture {
 		flex: 2;
@@ -324,7 +366,15 @@ input[type="submit"] {
 		width: 100%;
 	}
 }
+
 @media all and (max-width: 1000px) {
+	.gallery__img {
+		max-width: 1400px;
+	}
+	.gallery-item {
+		height: 300px;
+		width: 300px;
+	}
 	.picture.left::before,
 	.picture.right::before {
 		height: 30%;
@@ -375,6 +425,11 @@ input[type="submit"] {
 	}
 }
 @media all and (max-width: 650px) {
+	.gallery-item {
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		height: 100%;
+	}
 	.top-header {
 		flex-direction: column;
 		padding-inline: 0;
@@ -410,4 +465,25 @@ input[type="submit"] {
 	.picture {
 		width: 80%;
 	}
+}
+
+.container__buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	margin-right: 120px;
+	margin-left: 120px;
+}
+
+.container__buttons button {
+	height: 40px;
+	background-color: white;
+	border: none;
+}
+
+.container__buttons button:not(:last-child) {
+	margin-right: 35px;
 }
